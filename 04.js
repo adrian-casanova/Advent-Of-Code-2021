@@ -108,6 +108,8 @@ let winner = false;
 
 let idx = 0;
 
+console.log("BOARD: ", boards[0].boardStr);
+
 while (!winner) {
   if (idx > nums.length) break;
   const numsToUser = nums.slice(idx * 5, idx * 5 + 5);
@@ -118,7 +120,7 @@ while (!winner) {
       board.markPiece(num);
 
       if (board.checkWon()) {
-        console.log('WON: ', board.board);
+        console.log('WON: ', board.boardStr);
         board.getScore(num);
 
         process.exit(0);
